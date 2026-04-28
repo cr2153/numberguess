@@ -2,9 +2,24 @@ import random
 
 
 def main():
-    random_number = random.randint(1, 100)
+    random_number = 0
+    while True:
+        difficulty = input("Please enter a difficulty option. [E/M/H] ").lower()
+        if difficulty == 'e':
+            random_number = random.randint(1, 50)
+            break
+        elif difficulty == 'm':
+            random_number = random.randint(1, 100)
+            break
+        elif difficulty == 'h':
+            random_number = random.randint(1, 200)
+            break
+        else:
+            print('Please enter a valid character. "e" for easy, Etc.')
+
+
     attempts = 0
-    while(True):
+    while True:
         userinput = input("Please enter guess: ")
         try:
             userinput = int(userinput)
