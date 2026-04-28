@@ -1,22 +1,15 @@
 import random
 
-
 def main():
     random_number = 0
+    dictionary = {'e':50, 'm':100, 'h':200}
     while True:
-        difficulty = input("Please enter a difficulty option. [E/M/H] ").lower()
-        if difficulty == 'e':
-            random_number = random.randint(1, 50)
-            break
-        elif difficulty == 'm':
-            random_number = random.randint(1, 100)
-            break
-        elif difficulty == 'h':
-            random_number = random.randint(1, 200)
+        selection = input("Please choose a difficulty [E/M/H]: ").lower()
+        if selection in dictionary:
+            random_number = random.randint(1, dictionary[selection])
             break
         else:
-            print('Please enter a valid character. "e" for easy, Etc.')
-
+            print("Please enter a valid difficulty, for example, 'e' for easy.")
 
     attempts = 0
     while True:
