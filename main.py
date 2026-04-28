@@ -19,14 +19,14 @@ def main():
         except ValueError:
             print("error: please enter an integer")
             continue
+        attempts += 1  # increase attempts counter by one
         if userinput != random_number:
-            attempts += 1 #increase attempts counter by one if incorrect
             if userinput < random_number:
                 print('Too low, try again')
             else:
                 print('Too high, try again')
         else:
-            print(f'Congrats! you got it, the number was {random_number} and you took {attempts+1} attempt(s) to get it.') # uses fstring to print results of game
+            print(f'Congrats! you got it, the number was {random_number} and you took {attempts} attempt(s) to get it.') # uses fstring to print results of game
             break
 if __name__ == "__main__":
     main()
